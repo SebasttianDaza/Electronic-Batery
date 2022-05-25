@@ -1,0 +1,9 @@
+@import "./scss/base/base", "./scss/abstracts/variables";
+
+html, body {
+  font-family: $global-font-family;
+  background-color: $global-background-color;
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+}

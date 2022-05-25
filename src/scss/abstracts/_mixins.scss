@@ -1,0 +1,11 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin diplay_grid($columns, $rule, $align) {
+  display: grid;
+  grid-template-columns: repeat($rule, $columns);
+  align-items: $align;
+}

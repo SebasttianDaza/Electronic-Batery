@@ -1,0 +1,15 @@
+@import "./scss/abstracts/variables", "./scss/abstracts/mixins";
+
+.App {
+  max-width: 800px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $global-background-color-secondary;
+  border: 3px solid $global-background-border-color;
+
+  @include border-radius(5px);
+  @include diplay_grid(2, auto-fit, center);
+
+
+}

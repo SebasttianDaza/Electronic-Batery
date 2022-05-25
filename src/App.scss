@@ -1,15 +1,33 @@
 @import "./scss/abstracts/variables", "./scss/abstracts/mixins";
 
 .App {
-  max-width: 800px;
-  min-height: 300px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   background-color: $global-background-color-secondary;
   border: 3px solid $global-background-border-color;
-
+  width: 80%;
+  height: 80%;
   @include border-radius(5px);
-  @include diplay_grid(2, auto-fit, center);
+  @include display_grid(minmax(200px, 1fr), auto-fit, center, none);
+  
+  .App-header {
+    @include display_grid(1fr, 3, center, center);
+    grid-gap: .6rem;
+    overflow: clip;
+  }
 
+}
 
+@media screen and (min-width: 900px) {
+  .App {
+    max-width: 800px;
+    min-height: 300px;
+    width: 70%;
+    height: 50%;
+    padding: 2rem;
+
+    .App-header {
+      grid-gap: 1rem;
+    }
+  }
 }

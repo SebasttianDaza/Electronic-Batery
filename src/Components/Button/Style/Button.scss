@@ -1,0 +1,22 @@
+@import "../../../scss/abstracts/variables", "../../../scss/abstracts/mixins";
+
+.Btn {
+    width:4rem;
+    height: 4rem;
+    background-color: $global-background-color-tertiary;
+    border: none;
+    text-transform: uppercase;
+    font-family: $global-font-family;
+    @include border-radius(2px);
+}
+
+.Btn:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+    .Btn {
+        width: 6rem;
+        height: 6rem;
+    }
+}

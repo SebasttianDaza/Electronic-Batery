@@ -4,8 +4,9 @@
   border-radius: $radius;
 }
 
-@mixin diplay_grid($columns, $rule, $align) {
+@mixin display_grid($minmax, $rule, $align, $justify) {
   display: grid;
-  grid-template-columns: repeat($rule, $columns);
+  grid-template-columns: repeat($rule,$minmax);
   align-items: $align;
+  justify-items: $justify;
 }

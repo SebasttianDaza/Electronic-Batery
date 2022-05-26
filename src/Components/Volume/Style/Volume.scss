@@ -1,0 +1,95 @@
+@import "../../../scss/abstracts/mixins",  "../../../scss/abstracts/variables", "../../../scss/abstracts/functions";
+
+.Volume {
+    @extend .width-100;    height: auto;
+    @extend .cursor-pointer;
+
+    .inputRange-volume {
+        @extend .width-100;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+
+    .inputRange-volume::-webkit-slider-thumb {
+        @include border-radius(3px);
+        @extend .cursor-pointer;
+
+        -webkit-appearance: none;
+        border: 1px solid $background-volume-white-color;
+        height: 36px;
+        width: 16px;
+        background: $background-volume-white-color;
+        margin-top: -14px;
+        @include box_shadow(0, 0px, 0px, 1px, #000000);
+        @include box_shadow(0, 0px, 0px, 1px, #0d0d0d);
+    }
+
+    .inputRange-volume::-moz-range-thumb {
+        @include border-radius(3px);
+        @extend .cursor-pointer;
+        @include box_shadow(0, 0px, 0px, 1px, #000000);
+        @include box_shadow(0, 0px, 0px, 1px, #0d0d0d);
+
+        border: 1px solid $background-volume-white-color;
+        height: 36px;
+        width: 16px;
+        background: $background-volume-white-color;
+    }
+
+    .inputRange-volume::-ms-thumb {
+        @include border-radius(3px);
+        @extend .cursor-pointer;
+        @include box_shadow(0, 0px, 0px, 1px, #000000);
+        @include box_shadow(0, 0px, 0px, 1px, #0d0d0d);
+
+        border: 1px solid $background-volume-white-color;
+        height: 36px;
+        width: 16px;
+        background: $background-volume-white-color;
+    }
+
+    .inputRange-volume::focus {
+        outline: none;
+    }
+
+    .inputRange-volume::-ms-track {
+        @extend .width-100;
+        @extend .cursor-pointer;
+
+        height: 8.4px;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+        border-width: 16px 0;
+    }
+
+    .inputRange-volume::-webkit-slider-runnable-track {
+        @extend .width-100;
+        @extend .cursor-pointer;
+        @include border-radius(1.3px);
+        @include box_shadow(0, 0px, 0px, 1px, #000000);
+        @include box_shadow(0, 0px, 0px, 1px, #0d0d0d);
+
+
+        border: .2px solid $background-volume-white-color;
+        height: 8.4px;
+        background: #3071a9;
+    }
+
+    .inputRange-volume:focus::-webkit-slider-runnable-track {
+        background:#367ebd;
+    }
+
+    .inputRange-volume::-moz-range-track {
+        @extend .width-100;
+        @extend .cursor-pointer;
+        @include border-radius(1.3px);
+        @include box_shadow(0, 0px, 0px, 1px, #000000);
+        @include box_shadow(0, 0px, 0px, 1px, #0d0d0d);
+
+        border: .2px solid $background-volume-white-color;
+        height: 8.4px;
+        background: #3071a9;
+    }
+
+}

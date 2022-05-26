@@ -1,4 +1,4 @@
-@import "../../../scss/abstracts/variables", "../../../scss/abstracts/mixins";
+@import "../../../scss/abstracts/variables", "../../../scss/abstracts/mixins",  "../../../scss/abstracts/functions";
 
 .Btn {
     width:4rem;
@@ -8,6 +8,7 @@
     text-transform: uppercase;
     font-family: $global-font-family;
     @include border-radius(2px);
+    @extend .box-shadow;
 }
 
 .Btn:hover {

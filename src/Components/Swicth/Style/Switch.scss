@@ -1,0 +1,30 @@
+@import "../../../scss/abstracts/mixins", "../../../scss/abstracts/variables";
+
+.Switch {
+    @include display_flex(column, center, center);
+    width: 100%;
+
+    .Switch__title {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .Switch__switch {
+        width: 5rem;
+        height: 1.5rem;
+        background-color: $background-switch-color;
+        overflow: clip;
+        padding: 0.2rem;
+
+        .Switch__switch__btn {
+            width: 1.2rem;
+            height: 1.4rem;
+            background-color: $background-switch-btn-color;
+            
+        }
+
+        .Switch__switch__btn:hover {
+            cursor: pointer;
+        }
+    }
+}

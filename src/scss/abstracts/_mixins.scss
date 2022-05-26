@@ -10,3 +10,14 @@
   align-items: $align;
   justify-items: $justify;
 }
+
+@mixin display_flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin box_shadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+}

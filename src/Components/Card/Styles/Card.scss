@@ -1,0 +1,20 @@
+@import "../../../scss/abstracts/variables", "../../../scss/abstracts/mixins", "../../../scss/abstracts/functions";
+
+.Card {
+    @include border-radius(5px);
+    font-family: $global-font-family;
+
+    background-color: $global-background-color-tertiary;
+    width: 80%;
+    height: 4rem;
+    padding: 1rem;
+    @extend .overflow-clip;
+    @extend .box-shadow;
+
+    .Card-article {
+        height: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}

@@ -67,6 +67,11 @@ const Context = React.createContext({
 export const BackOneContextProvider = ({ children }) => {
   const [backOne, setBackOne] = useState({
     DataBackOne,
+    currentSong: "",
+    isOn: false,
+    isVolume: 0,
+    isChangeTypeSong: false,
+    isWork: {},
   });
 
   return <Context.Provider value={{ backOne, setBackOne }}>{children}</Context.Provider>;

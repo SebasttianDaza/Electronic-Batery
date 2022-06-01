@@ -12,28 +12,22 @@ import Card from "./Components/Card/card";
 const ABCButton = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
 const App = () => {
-  const [switchState, setSwitchState] = useState("");
   const [song, setSong] = useState("");
   const [backOne, setBackOne] = useBackOne();
 
-  const handleClick = (e) => {
-    setSwitchState(e.target.id);
-    const urlAudio = backOne.DataBackOne.find((item) => item.key === e.target.id);
-    const audio = new Audio(urlAudio.url);
-    audio.play();
-  };
+  console.log(backOne);
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <main className="App">
         <header className="App-header">
           {ABCButton.map((word) => {
-            return <Button key={word} content={word} event={handleClick} />;
+            return <Button key={word} content={word} />;
           })}
         </header>
         <article className="App-article">
           <Switch title="Power" />
-          <Card content={switchState} />
+          <Card />
           <Volume />
           <Switch title="Bank" />
         </article>

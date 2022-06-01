@@ -1,24 +1,21 @@
 import "./Styles/Card.scss";
 import { ErrorBoundary } from "react-error-boundary";
-import { useContext } from "react";
 import PropTypes from "prop-types";
 
+import useBackOne from "../../Hooks/useBackOne";
 import ErrorFallback from "../../Errors/handleError";
 
-const Card = ({ content }) => {
+const Card = ({}) => {
+  const [backOne] = useBackOne();
   return (
     <>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <section className="Card">
-          <article className="Card-article">{content}</article>
+          <article className="Card-article">{backOne.isCurrentSong}</article>
         </section>
       </ErrorBoundary>
     </>
   );
-};
-
-Card.propTypes = {
-  content: PropTypes.string.isRequired,
 };
 
 export default Card;

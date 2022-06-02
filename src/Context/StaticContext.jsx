@@ -69,7 +69,7 @@ export const BackOneContextProvider = ({ children }) => {
     DataBackOne,
     currentSong: "",
     isOn: false,
-    isVolume: 0,
+    isVolume: 4,
     isChangeTypeSong: false,
     isWork: {},
   });

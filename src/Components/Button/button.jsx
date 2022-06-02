@@ -9,17 +9,18 @@ const Button = ({ content }) => {
   const [backOne, setBackOne] = useBackOne();
 
   const handleClick = (e) => {
-    const urlAudio = backOne.DataBackOne.find((item) => item.key === e.target.id);
-    const audio = new Audio(urlAudio.url);
-
-    audio.play();
-    setBackOne((prevState) => {
-      return {
-        ...prevState,
-        isWork: urlAudio,
-        isCurrentSong: urlAudio.name,
-      };
-    });
+    if (backOne.isOn) {
+      const urlAudio = backOne.DataBackOne.find((item) => item.key === e.target.id);
+      const audio = new Audio(urlAudio.url);
+      audio.play();
+      setBackOne((prevState) => {
+        return {
+          ...prevState,
+          isWork: urlAudio,
+          isCurrentSong: urlAudio.name,
+        };
+      });
+    }
   };
 
   return (

@@ -1,5 +1,4 @@
 import "./App.scss";
-import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 import ErrorFallback from "./Errors/handleError";
@@ -8,14 +7,30 @@ import Button from "./Components/Button/button";
 import Switch from "./Components/Swicth/switch";
 import Volume from "./Components/Volume/volume";
 import Card from "./Components/Card/card";
+import useKeyBoard from "./Hooks/useKeyBoard";
 
 const ABCButton = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
 const App = () => {
-  const [song, setSong] = useState("");
   const [backOne, setBackOne] = useBackOne();
 
-  console.log(backOne);
+  useKeyBoard((e) => {
+    if (backOne.isOn) {
+      const response = backOne.DataBackOne.find((item) => item.key === e.key);
+      if (response) {
+        setBackOne((prevState) => {
+          return {
+            ...prevState,
+            isWork: response,
+            isCurrentSong: response.name,
+          };
+        });
+      }
+      const urlAudio = backOne.DataBackOne.find((item) => item.key === e.key);
+      const audio = new Audio(urlAudio.url);
+      audio.play();
+    }
+  });
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -28,7 +43,7 @@ const App = () => {
         <article className="App-article">
           <Switch title="Power" />
           <Card />
-          <Volume />
+          <Volume options={{ min: 0, max: 10 }} />
           <Switch title="Bank" />
         </article>
       </main>

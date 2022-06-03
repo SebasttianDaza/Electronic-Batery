@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App";
 import { BackOneContextProvider } from "./Context/StaticContext";
+import { ContextVolumeProvider } from "./Context/volumeData";
 import "./index.scss";
 
 const GlobalApp = ({}) => {
   return (
     <>
       <BackOneContextProvider>
-        <App />
+        <ContextVolumeProvider>
+          <App />
+        </ContextVolumeProvider>
       </BackOneContextProvider>
     </>
   );

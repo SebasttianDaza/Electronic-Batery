@@ -1,32 +1,39 @@
 import "./Style/Volume.scss";
 import PropTypes from "prop-types";
 import { ErrorBoundary } from "react-error-boundary";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 
+import ContextVolume from "../../Context/volumeData";
 import useBackOne from "../../Hooks/useBackOne";
 import ErrorFallback from "../../Errors/handleError";
 
 const Volume = ({ options }) => {
-  const [backOne, setBackOne] = useBackOne();
-  const [volume, setVolume] = useState();
   const { min, max } = options;
+  const [backOne, setBackOne] = useBackOne();
+  const { setVolume } = useContext(ContextVolume);
+  //Handle input
+  const [volumeHandle, setVolumeHanlde] = useState(0);
 
   const handleVolume = (e) => {
-    setVolume(e.target.value);
-    updateState();
+    if (backOne.isOn) {
+      setVolumeHanlde(e.target.value);
+    }
   };
 
-  const updateState = () => {
+  useEffect(() => {
     if (backOne.isOn) {
+      const volumeParse = volumeHandle / 10;
       setBackOne((prevState) => {
         return {
           ...prevState,
-          isCurrentSong: volume,
-          isVolume: volume,
+          isCurrentSong: volumeHandle,
         };
       });
+      setVolume({
+        isVolume: volumeParse,
+      });
     }
-  };
+  }, [volumeHandle, setBackOne, setVolume, backOne.isOn]);
 
   return (
     <>
@@ -37,8 +44,9 @@ const Volume = ({ options }) => {
             className="inputRange-volume"
             min={min}
             max={max}
-            value={volume}
+            value={volumeHandle}
             onChange={handleVolume}
+            disabled={!backOne.isOn}
           />
         </section>
       </ErrorBoundary>

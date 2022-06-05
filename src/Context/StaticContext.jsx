@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const DataBackOne = [
+export const DataBackOne = [
   {
     keyCode: 81,
     key: "q",
@@ -55,6 +55,63 @@ const DataBackOne = [
     key: "c",
     url: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3",
     name: "Cev-H2",
+  },
+];
+
+export const DataBackTwo = [
+  {
+    keyCode: 81,
+    key: "q",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3",
+    name: "Chord-1",
+  },
+  {
+    keyCode: 87,
+    key: "w",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3",
+    name: "Chord-2",
+  },
+  {
+    keyCode: 69,
+    key: "e",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3",
+    name: "Chord-3",
+  },
+  {
+    keyCode: 65,
+    key: "a",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3",
+    name: "Shaker",
+  },
+  {
+    keyCode: 83,
+    key: "s",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3",
+    name: "Open-Hi",
+  },
+  {
+    keyCode: 68,
+    key: "d",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
+    name: "Closed-Hi",
+  },
+  {
+    keyCode: 90,
+    key: "z",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
+    name: "Punchy-Kick",
+  },
+  {
+    keyCode: 88,
+    key: "x",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
+    name: "Side-Stick",
+  },
+  {
+    keyCode: 67,
+    key: "c",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
+    name: "Snare",
   },
 ];
 

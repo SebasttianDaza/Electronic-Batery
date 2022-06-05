@@ -10,7 +10,7 @@ const Card = ({}) => {
     <>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <section className="Card">
-          <article className="Card-article">{backOne.isOn ? backOne.isCurrentSong : ""}</article>
+          <article className="Card-article">{backOne.isOn ? backOne.isCurrentSong : "Off"}</article>
         </section>
       </ErrorBoundary>
     </>

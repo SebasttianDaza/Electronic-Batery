@@ -18,6 +18,7 @@ const App = () => {
   const { volume } = useContext(ContextVolume);
   const audio = new Audio();
 
+  //Handle event keydown and set state and play audio
   useKeyBoard((e) => {
     if (backOne.isOn) {
       const response = backOne.DataBackOne.find((item) => item.key === e.key);

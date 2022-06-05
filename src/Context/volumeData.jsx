@@ -5,6 +5,7 @@ const ContextVolume = React.createContext({
   isVolume: 5,
 });
 
+//ContextVolume.Provider is a component that provides the data to the rest of the application
 export const ContextVolumeProvider = ({ children }) => {
   const [volume, setVolume] = useState({
     isVolume: 5,

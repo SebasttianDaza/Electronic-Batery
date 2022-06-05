@@ -9,14 +9,14 @@ import ErrorFallback from "../../Errors/handleError";
 
 const Button = ({ content, objectAudio }) => {
   const [backOne, setBackOne] = useBackOne();
+  //Handle state volume of the music, it's context provider
   const { volume } = useContext(ContextVolume);
 
   const handleClick = (e) => {
+    //Set to state if it's battery is on
     if (backOne.isOn) {
+      //Look for song about the clicked button
       const urlAudio = backOne.DataBackOne.find((item) => item.key === e.target.id);
-      objectAudio.volume = volume.isVolume;
-      objectAudio.src = urlAudio.url;
-      objectAudio.play();
       setBackOne((prevState) => {
         return {
           ...prevState,
@@ -24,6 +24,12 @@ const Button = ({ content, objectAudio }) => {
           isCurrentSong: urlAudio.name,
         };
       });
+      //Play audio
+      objectAudio.volume = volume.isVolume;
+      objectAudio.src = urlAudio.url;
+      objectAudio.play();
+      //Put focus on the button
+      e.target.focus();
     }
   };
 

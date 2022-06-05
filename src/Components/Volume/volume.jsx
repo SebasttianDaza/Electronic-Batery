@@ -11,17 +11,19 @@ const Volume = ({ options }) => {
   const { min, max } = options;
   const [backOne, setBackOne] = useBackOne();
   const { setVolume } = useContext(ContextVolume);
-  //Handle input
+  //State to handle input
   const [volumeHandle, setVolumeHanlde] = useState(0);
 
   const handleVolume = (e) => {
     if (backOne.isOn) {
+      //Set state about input, but not set useBackOne for not generate a loop infinit
       setVolumeHanlde(e.target.value);
     }
   };
 
   useEffect(() => {
     if (backOne.isOn) {
+      //Convert volume to a level between 0 and 1
       const volumeParse = volumeHandle / 10;
       setBackOne((prevState) => {
         return {
@@ -29,6 +31,7 @@ const Volume = ({ options }) => {
           isCurrentSong: volumeHandle,
         };
       });
+      //Set state to handle volume on the object audio
       setVolume({
         isVolume: volumeParse,
       });

@@ -121,6 +121,7 @@ const Context = React.createContext({
   url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
 });
 
+//Context.Provider to provide data to all components
 export const BackOneContextProvider = ({ children }) => {
   const [backOne, setBackOne] = useState({
     DataBackOne,

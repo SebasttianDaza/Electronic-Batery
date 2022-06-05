@@ -8,13 +8,17 @@ import useBackOne from "../../Hooks/useBackOne";
 import { DataBackTwo, DataBackOne } from "../../Context/StaticContext";
 
 const Switch = ({ title }) => {
+  //State to set state global about click how switch, if true is on, if false is off
   const [changeState, setChangeState] = useState(false);
   const [backOne, setBackOne] = useBackOne();
+  //States to handle class about it's active or not
   const [classNamePower, setClassNamePower] = useState("");
   const [classNameBank, setClassNameBank] = useState("");
 
   const handleClick = (validate) => {
+    //Set state about to generate of the click
     if (validate) {
+      //If it's true, set state to false, and if it's false, set state to true
       const active = backOne.isOn ? false : true;
       setBackOne({
         ...backOne,
@@ -22,8 +26,10 @@ const Switch = ({ title }) => {
       });
     } else {
       if (backOne.isOn) {
+        //If it's true, set state to false, and if it's false, set state to true
         const active = changeState ? false : true;
         if (active) {
+          //Set change data about music
           setBackOne((prevState) => {
             return {
               ...prevState,
@@ -31,6 +37,7 @@ const Switch = ({ title }) => {
             };
           });
         } else {
+          //Set change data about music original
           setBackOne((prevState) => {
             return {
               ...prevState,
@@ -38,6 +45,7 @@ const Switch = ({ title }) => {
             };
           });
         }
+        //Set to change class on useEffect
         setChangeState(active);
       }
     }

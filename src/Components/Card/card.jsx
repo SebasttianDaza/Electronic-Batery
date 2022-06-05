@@ -10,6 +10,7 @@ const Card = ({}) => {
     <>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <section className="Card">
+          {/* Show something if it's the battery working */}
           <article className="Card-article">{backOne.isOn ? backOne.isCurrentSong : "Off"}</article>
         </section>
       </ErrorBoundary>

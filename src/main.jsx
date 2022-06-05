@@ -6,6 +6,7 @@ import { BackOneContextProvider } from "./Context/StaticContext";
 import { ContextVolumeProvider } from "./Context/volumeData";
 import "./index.scss";
 
+//Context Provider to handle state and data
 const GlobalApp = ({}) => {
   return (
     <>
